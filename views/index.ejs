@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Message Board</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>The Dojo Message Board</h1>
+            <hr>
+        </div>
+        <div id="messages">
+            <form action="/new_message" method="POST">
+                <h3>Name:</h3>
+                <input type="text" name="name" id="nameInput">
+                <h3>Message:</h3>
+                <textarea name="message" id="messageTextArea" cols="50" rows="5"></textarea><br>
+                <input type="submit", value="Post message" id="postButton">
+            </form>
+            <% for (var i in messages) { %>
+            <div class="singleMessage">
+                <h3>Name: <%= messages[i].name %></h3>
+                <h3>Message: <%= messages[i].message %></h3>
+            </div>
+                <% if (messages[i].comments.length > 0) { %>
+            <div class="comments">
+                    <% for (comment of messages[i].comments) { %>
+                <h5>Name: <%= comment.name %></h5>
+                <h5 class="singleComment">Comment: <%= comment.comment %></h5>
+                    <% } %>
+            </div>
+                <% } %>
+            <form action="/new_comment/<%= messages[i]._id %>", method="POST" id="commentForm">
+                <p>Name: <input type="text" name="name" id="commentName"></p>
+                Comment: <textarea name="comment" id="commentTextArea" cols="50" rows="5"></textarea><br>
+                <input type="submit" value="Post comment" id="commentPostButton">
+            </form>
+            <% } %>
+        </div>
+        <div id="footer">
+            <p>(c) 1994 by Coding Dojo & Jonathan E</p>
+        </div>
+    </div>
+</body>
+</html>

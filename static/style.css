@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    background-color: black;
+    height: 100%;
+    padding: 10px;
+}
+
+#header {
+    background-color: lightgray;
+    width: 85%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+    border: 2px  red;
+    border-style: solid;
+}
+
+#messages{
+    width: 85%;
+    background-color: white;
+    margin-left: 5%;
+    padding: 20px;
+    height: 80%;
+    overflow: auto;
+}
+
+#messages p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#nameInput{
+    width: 30%;
+    height: 20px;
+}
+
+#messageTextArea{
+    width: 90%;
+}
+
+#postButton{
+    background-color: darkgray;
+    border-radius: 5%;
+    width: 100px;
+    height: 20px;
+    box-shadow: 2px 2px;
+    margin-left: 75%;
+    font-size: 14px;
+    text-shadow: white 0.5px 0.5px;
+    margin-top: 10px;
+}
+
+.singleMessage{
+    margin: 10px;
+}
+
+.comments {
+    margin: 10px 0px 10px 5%;
+}
+
+.singleComment {
+    margin-bottom: 10px;
+}
+
+#commentForm {
+    margin-left: 5%;
+}
+
+#commentName {
+    margin-left: 25px;
+}
+
+#commentPostButton{
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+
+#footer{
+    background-color: lightgray;
+}
